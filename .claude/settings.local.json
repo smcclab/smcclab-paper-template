@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(gh run:*)",
+      "Bash(/opt/homebrew/bin/gh run:*)"
+    ]
+  }
+}

@@ -1,4 +1,12 @@
-\documentclass[manuscript]{acmart}
+\documentclass[manuscript, screen, review, nonacm]{acmart}
+
+\usepackage{multicol}
+% Suppress fancyhdr header commands used in the CHIZen checklist
+% (acmart already loads fancyhdr, so we redefine rather than define)
+\AtBeginDocument{%
+  \renewcommand{\rhead}[1]{}%
+  \renewcommand{\lhead}[1]{}%
+}
 
 \setcopyright{cc}
 \copyrightyear{2026}
@@ -11,12 +19,97 @@
 
 \title{SMCClab Paper Writing Template and Guide}
 
+\author{First Author}
+\affiliation{
+  \institution{Australian National University}
+  \city{Canberra}
+  \country{Australia}
+}
+\email{first.author@anu.edu.au}
+
+\author{Second Author}
+\affiliation{
+  \institution{Australian National University}
+  \city{Canberra}
+  \country{Australia}
+}
+\email{second.author@anu.edu.au}
+
 \begin{abstract}
-A guide and template for writing papers for the ANU Sound Music and Creative Computing Lab.
-This document is a guide to drafting a paper so that it has a focussed output for reviewers.
+  The abstract should be a concise (150--200 word) summary of the paper. It should state the
+  motivation and problem being addressed, the approach or method used, the key findings, and
+  the contribution or significance of the work. Write the abstract last, once the rest of the
+  paper is complete.
 \end{abstract}
+
+\keywords{human-computer interaction, keyword two, keyword three}
 
 \maketitle
 
+\section{Introduction}
+
+The introduction motivates the work and situates it within the broader research context.
+It should establish why the problem matters, what gap in existing knowledge this paper
+addresses, and briefly indicate the approach taken. Close the introduction with a clear
+statement of the paper's contributions and a roadmap of the remaining sections
+\cite{caine_sample_size:2016}.
+
+\section{Related Work}
+
+Review the prior work most relevant to this paper. Organise related work thematically
+rather than as an annotated list. Identify what has been done, what gaps remain, and how
+this work builds on or differs from existing research. Related work should justify the
+design decisions and evaluation approach described later.
+
+\section{Method}
+
+Describe the study or system design in sufficient detail for replication. Include
+participant recruitment and demographics, apparatus or materials, procedure, and any
+ethical considerations. For design research, describe the design process and rationale.
+For empirical studies, state hypotheses or research questions and justify the chosen
+methodology.
+
+\subsection{Participants}
+
+Describe who participated, how they were recruited, inclusion and exclusion criteria,
+and relevant demographic information. Report the sample size and justify it with
+reference to appropriate norms for the methodology used \cite{caine_sample_size:2016}.
+
+\subsection{Apparatus and Materials}
+
+Describe the hardware, software, stimuli, or instruments used. Include version numbers
+and configuration details where relevant. If a custom system was built, provide enough
+detail to understand its operation; a full technical description can go in a separate
+system description section if needed.
+
+\subsection{Procedure}
+
+Describe the sequence of events participants experienced, from consent through to
+debrief. Include timing, task descriptions, and any counterbalancing or randomisation
+applied.
+
+\section{Results}
+
+Present findings without interpretation. For quantitative studies, report descriptive
+statistics followed by inferential tests, including effect sizes and confidence intervals.
+For qualitative studies, present themes with illustrative quotes or examples. Use figures
+and tables to support the narrative rather than repeat it.
+
+\section{Discussion}
+
+Interpret the results in relation to the research questions and prior work. Explain what
+the findings mean, why they occurred, and what implications they have for design or
+theory. Acknowledge limitations of the study and suggest directions for future work.
+
+\section{Conclusion}
+
+Summarise the key contributions of the paper in two or three paragraphs. Restate the
+problem, the approach, the main findings, and the significance of the work. Do not
+introduce new material. End with a forward-looking statement about impact or next steps.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\input{components/CHIZen-Paper-Checklist}
 
 \end{document}

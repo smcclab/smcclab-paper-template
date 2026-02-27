@@ -1,0 +1,28 @@
+name: Build LaTeX
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up TeX Live
+        uses: xu-cheng/latex-action@v2
+        with:
+          # optional: specify packages or latexmk options
+          # install_packages: texlive-latex-recommended,texlive-latex-extra
+          # latexmk_options: "-pdf -interaction=nonstopmode"
+          # by default it runs latexmk on all .tex files in repo
+          
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: main-pdf
+          path: main.pdf
